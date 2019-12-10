@@ -1,0 +1,181 @@
+<%- include('partes/head') %>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/anunciar.css'>
+    <script src="/javascript/anunciar.js"></script>
+
+    </head>
+
+    <body>
+        <div class="body-content">
+            <%- include('partes/navegador-anunciar') %>
+
+                <form id="register-car" action="/">
+                    <div class="card card-add shadow rounded">
+                        <div class="step_progressbar">
+                            <ul class="ul">
+                                <li class="li active car">Veículo</li>
+                                <li class="li money">Valores</li>
+                                <li class="li contacts">Contatos</li>
+                                <li class="li image">Imagens</li>
+                                <li class="li end">Fim</li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <fieldset class="step">
+                                <div class="text-center">
+                                    <h1 id="title-form">Vamos começar!</h1>
+                                    <h4 id="subtitle-form">Nos conte um pouco sobre o seu carro:</h4>
+                                </div>
+                                <div class="form-group" id="marca">
+                                    <label for="marcas" class="label-ad">Marca</label>
+                                    <select name="marca" class="form-control form-control-lg" id="marcas">
+                                <option selected="true">Selecione a marca</option>
+                            </select>
+                                    <small id="marcaIndicator" class="form-text text-danger indicator"></small>
+                                </div>
+                                <div class="form-group" id="modelo">
+                                    <label for="modelos" class="label-ad">Modelo</label>
+                                    <select name="modelo" class="form-control form-control-lg" id="modelos">
+                                <option selected="true">Selecione o modelo</option>
+                            </select>
+                                    <small id="modeloIndicator" class="form-text text-danger indicator"></small>
+                                </div>
+                                <table id="ano">
+                                    <tr>
+                                        <td>
+                                            <div class="form-group" id="anomodelo">
+                                                <label for="anom" class="label-ad">Ano do modelo</label>
+                                                <select name="anom" class="form-control form-control-lg" id="anom">
+                                            <option selected="true">Selecione o ano</option>
+                                        </select>
+                                                <small id="anomIndicator" class="form-text text-danger indicator"></small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group" id="anofabricacao">
+                                                <label for="anof" class="label-ad">Ano da fabricação</label>
+                                                <select name="anof" class="form-control form-control-lg" id="anof">
+                                            <option selected="true">Selecione o ano</option>
+                                        </select>
+                                                <small id="anofIndicator" class="form-text text-danger indicator"></small>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                                <table id="cc">
+                                    <tr>
+                                        <td>
+                                            <div class="form-group" id="cor">
+                                                <label for="cores" class="label-ad">Cor</label>
+                                                <select name="cor" class="form-control form-control-lg" id="cores">
+                                            <option selected disabled>Selecione a cor</option>
+                                            <option value="Amarelo">Amarelo</option>
+                                            <option value="Azul">Azul</option>
+                                            <option value="Bege">Bege</option>
+                                            <option value="Branco">Branco</option>
+                                            <option value="Bronze">Bronze</option>
+                                            <option value="Cinza">Cinza</option>
+                                            <option value="Dourado">Dourado</option>
+                                            <option value="Indefinida">Indefinida</option>
+                                            <option value="Laranja">Laranja</option>
+                                            <option value="Marron">Marron</option>
+                                            <option value="Prata">Prata</option>
+                                            <option value="Preto">Preto</option>
+                                            <option value="Rosa">Rosa</option>
+                                            <option value="Roxo">Roxo</option>
+                                            <option value="Verde">Verde</option>
+                                            <option value="Vermelho">Vermelho</option>
+                                            <option value="Vinho">Vinho</option>
+
+                                        </select>
+                                                <small id="corIndicator" class="form-text text-danger indicator"></small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group" id="combustivel">
+                                                <label for="combustiveis" class="label-ad">Combustível</label>
+                                                <select name="combustivel" class="form-control form-control-lg" id="combustiveis">
+                                            <option selected disabled>Selecione o combustível</option>
+                                            <option value="Gasolina">Gasolina</option>
+                                            <option value="Alcool">Álcool</option>
+                                            <option value="Diesel">Diesel</option>
+                                            <option value="Gás Natural">Gás Natural</option>
+                                            <option value="Gasolina e Álcool">Gasolina e Álcool</option>
+                                            <option value="Álcool e Gás Natural">Álcool e Gás Natural</option>
+                                            <option value="Gasolina, Álcool e Gás Natural">Gasolina, Álcool e Gás
+                                                Natural
+                                            </option>
+                                            <option value="Gasolina, Álcool, Gás Natural e Benzina">Gasolina, Álcool,
+                                                Gás
+                                                Natural e Benzina</option>
+                                            <option value="Gasolina e Elétrico">Gasolina e Elétrico</option>
+                                        </select>
+                                                <small id="combustivelIndicator" class="form-text text-danger indicator"></small>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                                <table id="cp">
+                                    <tr>
+                                        <td>
+                                            <div class="form-group" id="cambio">
+                                                <label for="cambios" class="label-ad">Câmbio</label>
+                                                <select name="cambio" class="form-control form-control-lg" id="cambios">
+                                            <option selected disabled>Selecione o câmbio</option>
+                                            <option value="Automático">Automático</option>
+                                            <option value="Automatizado">Automatizado</option>
+                                            <option value="Automatizado DCT">Automatizado DCT</option>
+                                            <option value="CVT">CVT</option>
+                                            <option value="Manual">Manual</option>
+                                            <option value="Semi-automático">Semi-automático</option>
+                                        </select>
+                                                <small id="cambioIndicator" class="form-text text-danger indicator"></small>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="form-group" id="porta">
+                                                <label for="portas" class="label-ad">Número de Portas</label>
+                                                <select name="portas" class="form-control form-control-lg" id="portas">
+                                            <option selected disabled>Selecione o número de portas</option>
+                                            <option value="0">0</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+                                                <small id="portaIndicator" class="form-text text-danger indicator"></small>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+
+                                <br>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-outline-secondary btn-lg ad-btn " onclick="goBack()">Voltar</button>
+                                    <button type="button" class="btn btn-danger btn-lg ad-btn next">Continuar</button>
+                                </div>
+                            </fieldset>
+                            <fieldset class="step">
+                                <div class="text-center">
+                                    <h1 id="title-form">Conte um pouco mais...</h1>
+                                    <h4 id="subtitle-form">Quais as propriedades do seu carro?</h4>
+                                </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-outline-secondary btn-lg ad-btn previous">Voltar</button>
+                                    <button type="button" class="btn btn-danger btn-lg ad-btn next">Continuar</button>
+                                </div>
+                            </fieldset>
+
+                        </div>
+                    </div>
+                </form>
+        </div>
+
+
+        <%- include('partes/rodape') %>
+    </body>
+
+
+    </html>

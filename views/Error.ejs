@@ -1,0 +1,26 @@
+<%- include('partes/head') %>
+<link rel='stylesheet' type='text/css' media='screen' href='/css/error.css'>
+
+</head>
+
+<body>
+    <div class="card card-404 shadow rounded">
+        <div class="card-body">
+            <img src="/images/error.png" height="200px">
+            <h4 class="card-title title-login text-danger">Oops... <span class="text-dark">Ocorreu um erro</span></h4>
+            <p>Aconteceu um erro com o nosso site:<br><span class="text-danger"><%=erro%></span></p>
+            <a href="/" class="btn btn-danger btn-block "><i class="fas fa-home"></i>
+                Retornar para a Página Inicial</a>
+
+
+
+        </div>
+
+    </div>
+
+    <div class="footer-rl text-light">© 2019 Antigomobilistas de Osório S.A.<br> Todos os direitos reservados:
+        <a href="/" class="text-muted" id="link-login"> Antigomobilistasdeosorio.com</a>
+    </div>
+</body>
+
+</html>

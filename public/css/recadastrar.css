@@ -1,0 +1,36 @@
+.card-recovery{
+    width: 450px;
+    margin-left: auto;
+    margin-right:auto ;
+    margin-top: 5%;
+}
+.title-recovery{
+    text-align: center;
+}
+.link{
+    color: #7C7C7D;
+}
+.link:hover{
+    text-decoration: none;
+    color: #000000;
+
+}
+#msg{
+    text-align: center;
+}
+body{
+    background-image: url("/images/wallpaper-login.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+
+
+
+h6{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}

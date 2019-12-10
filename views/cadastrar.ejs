@@ -1,0 +1,181 @@
+<%- include('partes/head') %>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/cadastrar.css'>
+    <script src="/javascript/cadastrar.js"></script>
+
+    </head>
+
+    <body>
+        <div class="card card-register shadow rounded">
+            <div class="card-body">
+                <h4 class="card-title title-login">Cadastrar</h5>
+
+                    <form id="register" action="/cadastro/cadastrar" method="POST">
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="name" name="name" aria-describedby="nomeHelp" value="<%if(locals.usuario){%><%=usuario.name%><%}%>" placeholder="Nome Completo*">
+                            <small id="name_indicator" class="form-text error-message text-danger"></small>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<%if(locals.usuario){%><%=usuario.email%><%}%>" placeholder="Email*">
+                            <small id="email_indicator" class="form-text error-message text-danger"><%if(locals.usuario){%><%=erros[0]%><%}%></small>
+
+                        </div>
+                        <div class="form-group">
+                            <table id="form-table">
+                                <tr>
+                                    <th>
+                                        <input name="pass" id="pass" value="<%if(locals.usuario){%><%=usuario.pass%><%}%>" class="form-control password" type="password" placeholder="Senha*">
+
+                                    </th>
+                                    <th>
+                                        <input name="cpass" id="cpass" value="<%if(locals.usuario){%><%=usuario.cpass%><%}%>" class="form-control password" type="password" placeholder="Confirmação de Senha*">
+
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <small id="pass_indicator" class="form-text error-message text-danger"></small>
+                                    </td>
+                                    <td>
+                                        <small id="cpass_indicator" class="form-text error-message text-danger"></small>
+                                    </td>
+                                </tr>
+                            </table>
+
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="birthdate" class="col-5 col-form-label">Data de Nascimento*</label>
+                            <div class="col-7">
+                                <input class="form-control" name="birthdate" value="<%if(locals.usuario){%><%=usuario.birthdate%><%}%>" type="date" id="birthdate">
+                                <small id="birth_indicator" class="form-text error-message text-danger"></small>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="cpf" value="<%if(locals.usuario){%><%=usuario.cpf%><%}%>" id="cpf" aria-describedby="cpfHelp" placeholder="CPF*">
+                            <small id="cpf_indicator" class="form-text error-message text-danger"><%if(locals.usuario){%><%=erros[1]%><%}%></small>
+
+                        </div>
+                        <div class="form-group">
+                            <table id="form-table">
+                                <tr>
+
+                                    <th>
+                                        <input name="cep" id="cep" value="<%if(locals.usuario){%><%=usuario.cep%><%}%>" name="cep" class="form-control" type="text" placeholder="CEP*">
+                                    </th>
+                                    <th>
+                                        <input name="city" id="city" value="<%if(locals.usuario){%><%=usuario.city%><%}%>" name="city" readonly="true" class="form-control" type="text" placeholder="Cidade*">
+                                    </th>
+                                    <th>
+
+                                        <select class="form-control" value="<%if(locals.usuario){%><%=usuario.uf%><%}%>" id="uf" readonly="readonly" tabindex="-1" aria-disabled="true" name="uf">
+                                        <option value="<%if(locals.usuario){%><%=usuario.uf%><%}%>"><%if(locals.usuario){%><%=usuario.uf%><%}%></option>
+                                        <option value="AC">AC</option>
+                                        <option value="AL">AL</option>
+                                        <option value="AM">AM</option>
+                                        <option value="AP">AP</option>
+                                        <option value="BA">BA</option>
+                                        <option value="CE">CE</option>
+                                        <option value="DF">DF</option>
+                                        <option value="ES">ES</option>
+                                        <option value="GO">GO</option>
+                                        <option value="MA">MA</option>
+                                        <option value="MG">MG</option>
+                                        <option value="MS">MS</option>
+                                        <option value="MT">MT</option>
+                                        <option value="PA">PA</option>
+                                        <option value="PB">PB</option>
+                                        <option value="PE">PE</option>
+                                        <option value="PI">PI</option>
+                                        <option value="PR">PR</option>
+                                        <option value="RJ">RJ</option>
+                                        <option value="RN">RN</option>
+                                        <option value="RS">RS</option>
+                                        <option value="RO">RO</option>
+                                        <option value="RR">RR</option>
+                                        <option value="SC">SC</option>
+                                        <option value="SE">SE</option>
+                                        <option value="SP">SP</option>
+                                        <option value="TO">TO</option>
+                                    </select>
+                                    </th>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <small id="cep_indicator" class="form-text error-message text-danger"></small>
+
+                                    </td>
+                                    <td>
+                                        <small id="city_indicator" class="form-text error-message text-danger"></small>
+
+                                    </td>
+                                    <td>
+                                        <small id="uf_indicator" class="form-text error-message text-danger"></small>
+
+                                    </td>
+                                </tr>
+
+                            </table>
+
+                        </div>
+
+                        <div class="form-group">
+                            <table id="form-table">
+                                <tr>
+                                    <th>
+                                        <input name="mainphone" id="mainphone" value="<%if(locals.usuario){%><%=usuario.mainphone%><%}%>" class="form-control phone" type="tel" placeholder="Telefone Principal*">
+                                    </th>
+                                    <th>
+                                        <input name="secphone" id="secphone" value="<%if(locals.usuario){%><%=usuario.secphone%><%}%>" class="form-control phone" type="tel" placeholder="Telefone Secundário">
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <small id="mphone_indicator" class="form-text error-message text-danger"></small>
+
+                                    </td>
+                                    <td>
+                                        <small id="sphone_indicator" class="form-text error-message text-danger"></small>
+
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <small id="phonealert" class="form-text text-muted">Digite o DDD</small>
+
+                        </div>
+                        <small id="indicator" class="form-text error-message text-danger"></small>
+
+                        <button id="regbtn" type="submit" class="btn btn-primary btn-block text-white"><i
+                            class="fas fa-user-plus"></i>
+                        Cadastrar</button>
+                        <a href="/cadastro/login" class="btn btn-danger btn-block text-white"><i
+                            class="fas fa-sign-out-alt"></i>
+                        Cancelar</a>
+
+
+                    </form>
+            </div>
+            <!--
+        <div class="card-footer bg-transparent">
+            <div class="social-login">
+                <table id="social-table">
+                    <th><button class="btn facebook-btn social-btn" type="button"><span><i
+                                    class="fab fa-facebook-f"></i> Cadastrar pelo Facebook</span> </button></th>
+                    <th><button class="btn google-btn social-btn" type="button"><span><i
+                                    class="fab fa-google-plus-g"></i> Cadastrar pelo Google</span> </button></th>
+                </table>
+            </div>
+        </div>
+        -->
+        </div>
+
+        <div class="footer-rl text-light">© 2019 Antigomobilistas de Osório S.A.<br> Todos os direitos reservados:
+            <a href="/" class="text-muted" id="link-login"> Antigomobilistasdeosorio.com</a>
+        </div>
+    </body>
+
+    </html>

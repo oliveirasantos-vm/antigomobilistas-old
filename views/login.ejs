@@ -1,0 +1,79 @@
+<%- include('partes/head') %>
+<link rel='stylesheet' type='text/css' media='screen' href='/css/login.css'>
+<script src="/javascript/login.js"></script>
+
+</head>
+
+<body>
+    <div class="card card-login shadow rounded">
+        <div class="card-body">
+            <h4 class="card-title title-login">Login</h4>
+
+            <form id="login" action="/cadastro/login" method="POST">
+
+
+                <div class="form-group">
+
+                    <input type="email" value="<%if(locals.email){%><%=email%><%}%>" name="email" class="form-control" id="email"
+                        aria-describedby="emailHelp" placeholder="Email">
+                    <small id="email_indicator" class="form-text error-message text-danger">
+                            <%if(locals.erros){%><%=erros[0]%><%}%>
+                    </small>
+
+                </div>
+                <div class="form-group">
+
+                    <div class="input-group" id="show_hide_password">
+                        <input name="pass" class="form-control" id="pass" type="password" placeholder="Senha">
+                        <div class="input-group-append">
+                            <a class="input-group-text" id="eye" href=""><i class="fa fa-eye-slash"
+                                    aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <small id="pass_indicator" class="form-text error-message text-danger">
+                            <%if(locals.erros){%><%=erros[1]%><%}%>
+                        </small>
+
+                        <small id="forgotPassword" class="form-text text-muted">
+                            <a class="link" href="/cadastro/recadastrar">Esqueceu da senha?</a>
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-control custom-checkbox mr-sm-2">
+                            <input type="checkbox" name="remember" class="custom-control-input" id="preference">
+                            <label class="custom-control-label" for="preference">Lembrar de mim?</label>
+                        </div>
+                    </div>
+                    <small id="indicator" class="form-text error-message text-danger"></small>
+
+                    <button type="submit" class="btn btn-success btn-block "><i class="fas fa-sign-in-alt"></i>
+                        Entrar</button>
+                    <!--
+
+                    <h6>ou</h6>
+
+                    <div class="social-login">
+                        <table id="social-table">
+                            <th><button class="btn facebook-btn social-btn" type="button"><span><i
+                                            class="fab fa-facebook-f"></i> Login pelo Facebook</span> </button></th>
+                            <th><button class="btn google-btn social-btn" type="button"><span><i
+                                            class="fab fa-google-plus-g"></i> Login pelo Google+</span> </button></th>
+                        </table>
+                    </div>
+                    -->
+                </form>
+
+        </div>
+        <div class="card-footer bg-transparent">
+                <a href="/cadastro/cadastrar" class="btn btn-primary btn-block text-white"><i class="fas fa-user-plus"></i> 
+                    Cadastrar</a>
+        </div>
+
+    </div>
+
+    <div class="footer-rl text-light">© 2019 Antigomobilistas de Osório S.A.<br> Todos os direitos reservados:
+            <a href="/" class="text-muted" id="link-login"> Antigomobilistasdeosorio.com</a>
+    </div>
+</body>
+
+</html>

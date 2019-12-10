@@ -1,0 +1,36 @@
+#brand-navuser {
+    font-size: 35px;
+}
+
+#nav-login-icon-data {
+    background-color: #ddd;
+    border-radius: 100%;
+    object-fit: cover;
+    width: 200px;
+    width: 43px;
+    height: 43px;
+    border: 2px solid #7C7C7D;
+    margin-left: 2px;
+}
+
+.user-infos {
+    text-align: right;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+.user-photo {
+    text-align: right;
+}
+
+#user-card-icon-name {
+    font-size: 15px;
+}
+
+#user-card-icon-email {
+    font-size: 10px;
+}
+
+li.dropdown:hover>.dropdown-menu {
+    display: block;
+}

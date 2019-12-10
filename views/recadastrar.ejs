@@ -1,0 +1,46 @@
+<%- include('partes/head') %>
+<link rel='stylesheet' type='text/css' media='screen' href='/css/recadastrar.css'>
+<script src="/javascript/recadastrar.js"></script>>
+
+</head>
+
+<body>
+    <div class="card card-recovery shadow rounded">
+        <div class="card-body">
+            <h4 class="card-title title-recovery">Recadastrar</h4>
+            <p id="msg">Uma nova senha será enviada para o e-mail abaixo.</p>
+
+            <form id="reregister" action="/cadastro/recadastrar" method="POST">
+
+
+                <div class="form-group">
+                    <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp"
+                        placeholder="Email">
+                    <small id="email_indicator" class="form-text error-message text-danger"></small>
+
+                </div>
+
+                <small id="indicator" class="form-text error-message text-danger"></small>
+
+
+                <button type="submit" class="btn btn-success btn-block "><i class="fas fa-paper-plane"></i>
+                    Enviar</button>
+
+
+
+            </form>
+
+        </div>
+        <div class="card-footer bg-transparent">
+            <a href="/cadastro/login" class="btn btn-danger btn-block text-white"><i class="fas fa-sign-out-alt"></i>
+                Cancelar</a>
+        </div>
+
+    </div>
+
+    <div class="footer-rl text-light">© 2019 Antigomobilistas de Osório S.A.<br> Todos os direitos reservados:
+        <a href="/" class="text-muted" id="link-login"> Antigomobilistasdeosorio.com</a>
+    </div>
+</body>
+
+</html>

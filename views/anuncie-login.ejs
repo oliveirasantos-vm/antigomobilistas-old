@@ -1,0 +1,73 @@
+<%- include('partes/head') %>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/anuncie.css'>
+    <script src="/javascript/anuncie.js"></script>
+
+    </head>
+
+    <body>
+        <div class="body-content">
+            <%- include('partes/navegador') %>
+                <div class="intro shadow">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <a href="/"><img class="al-login" src="/images/logo.png" width="150"></a>
+                                <h2 class="al-title">Anuncie seu carro antigo na <br><a href="/" class="al-logo sp-link">Antigomobilistas de
+                                Osório</a></h2>
+                            </div>
+                            <div class="col">
+                                <img class="al-car" src="/images/add-car.png" width="700">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main">
+                    <div class="container ">
+                        <h2>Por que anunciar conosco?</h2>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-auto">
+                                <img src="/images/design.png" width="64" height="64">
+                            </div>
+                            <div class="col">
+                                <h5 id="ok-design">Design agradável!</h5>
+                                <p>Nosso layout faz com que o seu cliente se sinta em uma concecionária de carros antigos!</p>
+                            </div>
+                            <div class="col-md-auto">
+                                <img src="/images/description.png" width="64" height="64">
+                            </div>
+                            <div class="col">
+                                <h5 id="ok-description">Descrição completa!</h5>
+                                <p>Você pode pôr todas as características do seu carro aqui para encontrar o cliente ideal para você!
+                                </p>
+                            </div>
+                            <div class="col-md-auto">
+                                <img src="/images/money.png" width="64" height="64">
+                            </div>
+                            <div class="col">
+                                <h5 id="ok-money">Sem intermediários!</h5>
+                                <p>Você pode fazer seu negócio sem ninguem no seu pé! Somente você e o cliente!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mid bg-dark p-5">
+                    <h1 class="text-light text-center">Pronto para anunciar seu veículo?
+                        <a class="sp-link" id="ad-link" href="#add-frame">Sim</a>
+                    </h1>
+                </div>
+                <div id="add-frame" class="final text-center">
+                    <h2 class="text-light">Anuncie na Antigomobilistas!</h2>
+
+                    <a href="/anunciar/cadastrar" class="btn btn-outline-danger btn-lg">Anuncie!</a>
+
+                </div>
+
+        </div>
+
+
+        <%- include('partes/rodape') %>
+    </body>
+
+
+    </html>

@@ -1,0 +1,133 @@
+.data-user {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+img.avatar,
+div.avatar {
+    border: 1px solid #eee;
+    width: 122px;
+    height: 122px;
+}
+#alter-pass{
+    padding-top: 15px;  
+    padding-bottom: 15px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: -10px;  
+    margin-left: -5px;
+    margin-right: -5px;
+
+}
+#alter-pass:hover{
+    background-color: #eee;  
+    color: #000000;
+    cursor: pointer;
+}
+#link {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+#arrow{
+    margin-top: -4px;
+}
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-preview-block {
+    background-size: cover;
+    position: relative;
+    width: 128px;
+    height: 128px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#change-avatar-button {
+    position: absolute;
+    margin-top: -128px;
+}
+
+label {
+    font-size: 12px;
+    font-weight: 100;
+}
+
+#update {
+    line-height: 0.5;
+}
+
+#name-email {
+    margin-left: -15px;
+}
+
+#form-table {
+    width: 100%;
+}
+
+#submit-table {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#uf[readonly] {
+    pointer-events: none;
+    touch-action: none;
+}
+
+.pop-header {
+    text-align: center;
+    background-color: #990000;
+    color: #ffffff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+.pop-outer {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pop-content {
+    padding: 20px;
+    text-align: center;
+    font-weight: 100;
+}
+
+#pop-table {
+    width: 100%;
+    position: relative;
+}
+
+.pop-inner {
+    background-color: #eee;
+    line-height: 1.5;
+    width: 400px;
+    height: 300px;
+    margin: 5% auto;
+}

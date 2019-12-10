@@ -1,0 +1,155 @@
+.body-content {
+    background-image: url("/images/ad-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-add {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px;
+    width: 590px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ad-btn {
+    width: 200px;
+}
+
+.label-ad {
+    color: #7C7C7D;
+    margin-top: 10px;
+    margin-bottom: -5px;
+}
+
+#form-id {
+    text-align: right;
+    width: 100%;
+}
+
+#ano {
+    width: 100%;
+}
+
+#cc {
+    width: 100%;
+}
+
+#cp {
+    width: 100%;
+}
+
+
+/**/
+
+.step_progressbar {
+    display: block;
+    width: 490px;
+    margin: 20px auto;
+}
+
+.ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -9%;
+}
+
+.li {
+    display: inline-block;
+    position: relative;
+    width: 33.33%;
+    text-align: center;
+    color: #D1D1D7;
+}
+
+.li:before {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: solid 6px #D1D1D7;
+    color: #D1D1D7;
+    line-height: 38px;
+    text-align: center;
+    content: "1";
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    font-size: 20px;
+}
+
+.li.active {
+    color: #00cc00;
+    cursor: pointer;
+}
+
+.li.active:before {
+    border: solid 6px #00cc00;
+    color: #00cc00;
+}
+
+.li.done {
+    color: #00cc00;
+    cursor: pointer;
+}
+
+.li.done:before {
+    border: solid 6px #00cc00;
+    background-color: #00cc00;
+    color: #FFFFFF;
+}
+
+.li.car:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f1b9";
+}
+
+.li.money:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f155";
+}
+
+.li.contacts:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f095";
+}
+
+.li.image:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f302";
+}
+
+.li.end:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f061";
+}
+
+.li:after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #D1D1D7;
+    position: absolute;
+    top: 25px;
+    left: -50%;
+    z-index: 1;
+}
+
+.li:first-child:after {
+    content: none;
+}
+
+.li.active+.li:after {
+    background-color: #00cc00;
+}

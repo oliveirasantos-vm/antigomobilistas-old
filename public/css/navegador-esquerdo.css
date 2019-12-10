@@ -1,0 +1,9 @@
+.selected-item{
+    border-left: 3px solid #990000;
+    background-color: #eee;
+}
+.navleft{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 16px;
+}

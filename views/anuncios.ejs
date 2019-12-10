@@ -1,0 +1,35 @@
+<%- include('partes/head') %>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/navegador-usuario.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/navegador-esquerdo.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/anuncios.css'>
+    <script src="/javascript/anuncios.js"></script>
+    <script src="/javascript/usuario.js"></script>
+    <script type="text/javascript">
+    </script>
+    </head>
+
+    <body>
+        <div class="body-content">
+            <%- include('partes/navegador-usuario') %>
+                <br>
+                <div class="container content">
+                    <div class="row">
+                        <div class="col-3">
+                            <%- include('partes/navegador-esquerdo') %>
+                        </div>
+                        <div class="col shadow bg-light rounded">
+                            <div class="container add">
+                                <h3 class="border-bottom">Meus Anúncios</h3>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+        </div>
+
+        <%- include('partes/rodape') %>
+
+
+    </body>

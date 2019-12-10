@@ -1,0 +1,67 @@
+.intro {
+    background-image: url("/images/ad-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.final {
+    background-image: url("/images/ad-background2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 120px;
+    padding-left: 120px;
+}
+
+.btn-lg {
+    font-size: 30px;
+}
+
+.final {
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+.al-car {
+    position: absolute;
+    right: 0;
+}
+
+#ok-description {
+    color: #0094ff;
+}
+
+#ok-money {
+    color: #e9ae0b;
+}
+
+.sp-link {
+    color: #990000;
+}
+
+.sp-link:hover {
+    text-decoration: none;
+    color: #E00000;
+}
+
+#ok-design {
+    color: #ff00dc;
+}
+
+.main {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    background-color: #ebecf0;
+}
+
+.al-title {
+    margin-top: 50px;
+}
+
+.al-logo {
+    color: #990000;
+    font-size: 42px;
+}

@@ -1,0 +1,8 @@
+<div class="navleft shadow bg-light rounded">
+    <nav class="nav flex-column  ">
+        <a class="nav-link link <%if(titulo == 'Anunciar'){%> selected-item text-dark<%}else{%><%}%>" href="/anunciar"><i class="fas fa-car-side"></i> Anunciar</a>
+        <a class="nav-link link <%if(titulo == 'Meus Anúncios'){%> selected-item text-dark<%}else{%><%}%>" href="/usuario/anuncios"><i class="fas fa-ad"></i> Meus anúncios</a>
+        <a class="nav-link link <%if(titulo == 'Meus Dados'){%> selected-item text-dark<%}else{%><%}%>" href="/usuario/dados"><i class="fas fa-address-card"></i> Meus dados</a>
+        <a class="nav-link link " href="/usuario/logout"><i class="fas fa-sign-out-alt"></i> Sair</a>
+    </nav>
+</div>

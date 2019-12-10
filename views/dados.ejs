@@ -1,0 +1,252 @@
+<%- include('partes/head') %>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/navegador-usuario.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/navegador-esquerdo.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='/css/dados.css'>
+    <script src="/javascript/dados.js"></script>
+    <script src="/javascript/usuario.js"></script>
+
+    </head>
+
+    <body>
+        <div class="body-content">
+            <%- include('partes/navegador-usuario') %>
+                <br>
+                <div class="container content">
+                    <div class="row">
+                        <div class="col-3">
+                            <%- include('partes/navegador-esquerdo') %>
+                        </div>
+                        <div class="col shadow bg-light rounded data-user">
+                            <form id="update" action="/usuario/atualizar" method="POST" class="container" enctype="multipart/form-data">
+                                <h3 class="border-bottom">Meus Dados</h3>
+                                <div class="row">
+                                    <div class="col border-right">
+                                        <h5>Dados Pessoais</h5>
+                                        <div class="row">
+                                            <div class="col-md-auto center-block">
+                                                <div id="img-preview-block" class="avatar avatar-original " style="background-image:url(<%=usuario.foto%>)">
+                                                </div>
+                                                <span class="btn btn-link link btn-file" id="change-avatar-button"><i
+                                                class="fas fa-camera"></i><input type="file" id="upload-img" name="foto"
+                                                accept="image/png, image/jpeg"></span>
+                                                <input type="hidden" id="hidden_image" name="foto2" value="<%=usuario.foto%>">
+                                            </div>
+                                            <div class="col" id="name-email">
+                                                <div class="form-group">
+                                                    <label for="name">Nome completo:*</label>
+                                                    <input type="text" class="form-control" id="name" name="name" aria-describedby="nomeHelp" value="<%if(locals.usuario){%><%=usuario.nome%><%}%>" placeholder="Nome Completo*">
+                                                    <small id="name_indicator" class="form-text error-message text-danger"></small>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="name">Email:*</label>
+                                                    <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<%if(locals.usuario){%><%=usuario.email%><%}%>" placeholder="Email*">
+                                                    <small id="email_indicator" class="form-text error-message text-danger"><%if(locals.usuario && locals.erros){%><%=erros[0]%><%}%></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cpf">CPF:*</label>
+
+                                            <input type="text" class="form-control" name="cpf" value="<%if(locals.usuario){%><%=usuario.cpf%><%}%>" id="cpf" aria-describedby="cpfHelp" placeholder="CPF*">
+                                            <small id="cpf_indicator" class="form-text error-message text-danger"><%if(locals.usuario && locals.erros){%><%=erros[1]%><%}%></small>
+
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="birthdate" class="col-5 col-form-label">Data de Nascimento:*</label>
+                                            <div class="col-7">
+                                                <input class="form-control" name="birthdate" value="<%if(locals.usuario){%><%=usuario.nascimento%><%}%>" type="date" id="birthdate">
+                                                <small id="birth_indicator" class="form-text error-message text-danger"></small>
+                                            </div>
+
+                                        </div>
+                                        <div id="alter-pass" data-toggle="modal" data-target="#modalExemplo" class="link">Alterar senha<i class="fas fa-angle-right float-right" id="arrow"></i></a>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="col pl">
+                                        <h5>Endereço e Contatos</h5>
+                                        <div class="form-group">
+                                            <table id="form-table">
+                                                <tr>
+                                                    <th>
+                                                        <label for="cep">CEP:*</label>
+                                                        <input name="cep" id="cep" value="<%if(locals.usuario){%><%=usuario.cep%><%}%>" name="cep" class="form-control" type="text" placeholder="CEP*">
+                                                    </th>
+                                                    <th>
+                                                        <label for="city">Cidade:*</label>
+                                                        <input name="city" id="city" value="<%if(locals.usuario){%><%=usuario.cidade%><%}%>" name="city" readonly="true" class="form-control" type="text" placeholder="Cidade*">
+                                                    </th>
+                                                    <th>
+                                                        <label for="uf">UF:*</label>
+
+                                                        <select class="form-control" value="<%if(locals.usuario){%><%=usuario.estado%><%}%>" id="uf" readonly="readonly" tabindex="-1" aria-disabled="true" name="uf">
+                                                        <option value="<%if(locals.usuario){%><%=usuario.estado%><%}%>"><%if(locals.usuario){%><%=usuario.estado%><%}%></option>
+                                                        <option value="AC">AC</option>
+                                                        <option value="AL">AL</option>
+                                                        <option value="AM">AM</option>
+                                                        <option value="AP">AP</option>
+                                                        <option value="BA">BA</option>
+                                                        <option value="CE">CE</option>
+                                                        <option value="DF">DF</option>
+                                                        <option value="ES">ES</option>
+                                                        <option value="GO">GO</option>
+                                                        <option value="MA">MA</option>
+                                                        <option value="MG">MG</option>
+                                                        <option value="MS">MS</option>
+                                                        <option value="MT">MT</option>
+                                                        <option value="PA">PA</option>
+                                                        <option value="PB">PB</option>
+                                                        <option value="PE">PE</option>
+                                                        <option value="PI">PI</option>
+                                                        <option value="PR">PR</option>
+                                                        <option value="RJ">RJ</option>
+                                                        <option value="RN">RN</option>
+                                                        <option value="RS">RS</option>
+                                                        <option value="RO">RO</option>
+                                                        <option value="RR">RR</option>
+                                                        <option value="SC">SC</option>
+                                                        <option value="SE">SE</option>
+                                                        <option value="SP">SP</option>
+                                                        <option value="TO">TO</option>
+                                                    </select>
+                                                    </th>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <small id="cep_indicator" class="form-text error-message text-danger"></small>
+
+                                                    </td>
+                                                    <td>
+                                                        <small id="city_indicator" class="form-text error-message text-danger"></small>
+
+                                                    </td>
+                                                    <td>
+                                                        <small id="uf_indicator" class="form-text error-message text-danger"></small>
+
+                                                    </td>
+                                                </tr>
+
+                                            </table>
+
+                                        </div>
+
+                                        <div class="form-group">
+                                            <table id="form-table">
+                                                <tr>
+                                                    <th>
+                                                        <label for="mainphone">Telefone Principal:*</label>
+
+                                                        <input name="mainphone" id="mainphone" value="<%if(locals.usuario){%><%=usuario.telefone%><%}%>" class="form-control phone" type="tel" placeholder="Telefone Principal*">
+                                                    </th>
+                                                    <th>
+                                                        <label for="secphone">Telefone Secundário:</label>
+
+                                                        <input name="secphone" id="secphone" value="<%if(locals.usuario){%><%=usuario.telefone2%><%}%>" class="form-control phone" type="tel" placeholder="Telefone Secundário">
+                                                    </th>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <small id="mphone_indicator" class="form-text error-message text-danger"></small>
+
+                                                    </td>
+                                                    <td>
+                                                        <small id="sphone_indicator" class="form-text error-message text-danger"></small>
+
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                        <input type="hidden" id="iduser" name="iduser" value="<%=usuario.idusuario%>">
+                                        <small id="indicator" class="form-text error-message text-danger"></small>
+                                        <table id="submit-table">
+                                            <tr>
+                                                <th>
+                                                    <a id="remove-profile" class="btn btn-danger btn-block text-white"><i
+                                                                class="fas fa-user-times"></i>&nbsp Remover Conta</a>
+
+                                                </th>
+                                                <th>
+                                                    <button type="submit" class="btn btn-success btn-block "><i
+                                                                class="fas fa-save"></i>&nbsp Salvar Alterações</button>
+                                                </th>
+
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <br>
+        </div>
+
+        <%- include('partes/rodape') %>
+
+            <div style="display: none;" class="pop-outer">
+                <div class="pop-inner rounded shadow">
+                    <div class="pop-header rounded-top"><img src="/images/popup-alert.png" width="72" height="72"><br>Tem certeza que deseja remover sua conta?</div>
+
+                    <div class="pop-content">
+                        <p>Se você remover sua conta, todos os seus dados, incluindo os seus anúncios, serão apagados.
+                            <br><br>Deseja prosseguir?</p>
+
+                        <table id="pop-table">
+                            <tr>
+                                <th>
+                                    <button id="cancel" class="btn btn-secondary btn-block "><i class="fas fa-times"></i>&nbsp
+                                Cancelar</button>
+                                </th>
+                                <th>
+                                    <button id="confirm" class="btn btn-danger btn-block "><i class="fas fa-frown"></i>&nbsp
+                                Remover</a>
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Alterar Senha</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <form id="password" action="/usuario/senha" method="POST">
+                        <div class="modal-body">
+                            <p>Use uma senha de pelo menos 8 caracteres.</p>
+                            <div class="form-group">
+                                <label for="pass">Senha:</label>
+
+                                <div class="input-group" id="show_hide_password">
+                                    <input name="pass" class="form-control input-form" id="pass" type="password" placeholder="Senha">
+                                    <div class="input-group-append">
+                                        <a class="input-group-text" id="eye" href=""><i class="fa fa-eye-slash"
+                                        aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                                <small id="pass_indicator" class="form-text error-message text-danger"></small>
+                            </div>
+                            <div class="form-group">
+                                <label for="cpass">Confirmação de Senha:</label>
+                                <input name="cpass" id="cpass" class="form-control password input-form" type="password" placeholder="Confirmação de Senha*">
+                                <small id="cpass_indicator" class="form-text error-message text-danger "></small>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
+                            <input type="submit" class="btn btn-success" value="Alterar Senha">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div>
+    </body>
